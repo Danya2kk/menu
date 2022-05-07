@@ -3,7 +3,7 @@ import sqlite3
 
 def createMenu():
     try:
-        sqlite_connection = sqlite3.connect("sqlite_pyth.db")
+        sqlite_connection = sqlite3.connect("../sqlite_pyth.db")
         cursor = sqlite_connection.cursor()
 
         create_table_query = '''CREATE TABLE IF NOT EXISTS menu (
@@ -23,7 +23,7 @@ def createMenu():
 
 def selectMenu():
     try:
-        sqlite_connection = sqlite3.connect("sqlite_pyth.db")
+        sqlite_connection = sqlite3.connect("../sqlite_pyth.db")
         cursor = sqlite_connection.cursor()
 
         sqlite_select_query = "SELECT * FROM menu;"
@@ -43,7 +43,7 @@ def selectMenu():
 
 def insertManyDataMenu(id, name):
     try:
-        sqlite_connection = sqlite3.connect("sqlite_pyth.db")
+        sqlite_connection = sqlite3.connect("../sqlite_pyth.db")
         cursor = sqlite_connection.cursor()
 
         insert_data_query = '''INSERT INTO menu (id, name)
@@ -63,7 +63,7 @@ def insertManyDataMenu(id, name):
 
 def lastID():
     try:
-        sqlite_connection = sqlite3.connect("sqlite_pyth.db")
+        sqlite_connection = sqlite3.connect("../sqlite_pyth.db")
         cursor = sqlite_connection.cursor()
 
         sqlite_select_query = "SELECT MAX(id) FROM menu;"
